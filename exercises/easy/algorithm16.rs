@@ -13,6 +13,18 @@ use std::fmt::{self, Display, Formatter};
 
 pub fn rotate_matrix_90_degrees(matrix: &mut Vec<Vec<i32>>) {
     // TODO: Implement the logic to rotate the matrix 90 degrees in place
+    let n = matrix.len();
+    let m = matrix[0].len();
+    let mut ans = vec![vec![0; n]; m];
+    for i in 0..n {
+        for j in 0..m {
+            ans[j][i] = matrix[i][j];
+        }
+    }
+    for mut arr in &mut ans {
+        arr.reverse();
+    }
+    *matrix = ans
 }
 
 #[cfg(test)]

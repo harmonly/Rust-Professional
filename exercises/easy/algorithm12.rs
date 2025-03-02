@@ -5,7 +5,7 @@
 
     You need to implement the function `is_palindrome(s: String) -> bool`.
     The function should return `true` if the string is a palindrome, and `false` otherwise.
-    
+
     Hint: Consider normalizing the string by converting it to lowercase and removing non-alphabetical characters before checking.
 */
 
@@ -13,7 +13,19 @@ use std::fmt::{self, Display, Formatter};
 
 pub fn is_palindrome(s: String) -> bool {
     // TODO: Implement the logic to check if the string is a palindrome
-    false // Placeholder return value
+    let mut arr: Vec<char> = vec![];
+    for c in s.chars() {
+        if c.is_alphabetic() {
+            arr.push(c.to_lowercase().next().unwrap());
+        }
+    }
+    let n = arr.len();
+    for i in 0..n / 2 {
+        if arr[i] != arr[n - i - 1] {
+            return false;
+        }
+    }
+    true
 }
 
 #[cfg(test)]
