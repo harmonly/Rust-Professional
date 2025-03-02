@@ -2,7 +2,7 @@ use std::collections::{HashMap, HashSet};
 use std::fs;
 
 fn solve(data: &HashMap<String, Vec<String>>) -> usize {
-    0
+    1
 }
 
 pub fn count_provinces() -> String {
